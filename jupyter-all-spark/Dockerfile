@@ -1,4 +1,4 @@
-FROM jupyter/all-spark-notebook:437f1ef92733
+FROM jupyter/all-spark-notebook:8b4d6f6ac0d7
 
 USER root
 
@@ -7,8 +7,15 @@ RUN apt-get update && \
       vim \
       ssh-client \
       libaio1 \
+      htop \
     && \
     rm -rf /var/lib/apt/lists/*
 
 USER $NB_UID
 
+RUN pip install jupyterlab-code-formatter==1.2.* autopep8==1.5.* isort==4.3.* nbdime==2.0.* && \
+    jupyter labextension install @ryantam626/jupyterlab_code_formatter@^v1.2.4 --no-build && \
+    jupyter labextension install @jupyterlab/toc@^v3.0.0 --no-build && \
+    jupyter labextension install jupyterlab-python-file@^v0.4.0 --no-build && \
+    jupyter lab build -y && jupyter lab clean -y && \
+    jupyter serverextension enable --py jupyterlab_code_formatter
