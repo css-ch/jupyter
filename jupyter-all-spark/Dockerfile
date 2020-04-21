@@ -18,4 +18,4 @@ RUN pip install jupyterlab-code-formatter==1.2.* autopep8==1.5.* isort==4.3.* nb
     jupyter labextension install @jupyterlab/toc@^v3.0.0 --no-build && \
     jupyter labextension install jupyterlab-python-file@^v0.4.0 --no-build && \
     jupyter lab build -y && jupyter lab clean -y && \
-    jupyter serverextension enable --py jupyterlab_code_formatter
+    jupyter serverextension enable --py jupyterlab_code_formatter --sys-prefix
