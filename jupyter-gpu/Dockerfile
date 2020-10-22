@@ -1,4 +1,4 @@
-FROM cschranz/gpu-jupyter@sha256:8ae66707ffd31351b04585e6a8508fd761a2f3cd9b7f5f0dca68980bd3d9b853
+FROM cssinsurance/jupyter-gpu-base@sha256:f76ebc6094584ea1f884789977899c59320164e65c4b77c4a0aca922a5e6cc60
 
 USER root
 
