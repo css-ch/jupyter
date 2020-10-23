@@ -10,7 +10,6 @@ RUN apt-get update && \
       htop \
     && \
     rm -rf /var/lib/apt/lists/*
-RUN usermod -a -G video jovyan
 
 USER $NB_UID
 RUN pip install jupyterlab-code-formatter==1.2.* autopep8==1.5.* isort==4.3.* nbdime==2.0.*
