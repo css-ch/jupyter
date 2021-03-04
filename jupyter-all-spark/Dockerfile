@@ -8,6 +8,8 @@ RUN apt-get update && \
       ssh-client \
       libaio1 \
       htop \
+      zip \
+      openjdk-11-jdk \
     && \
     rm -rf /var/lib/apt/lists/*
 
