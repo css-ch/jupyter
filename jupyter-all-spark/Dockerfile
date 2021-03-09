@@ -11,6 +11,7 @@ RUN apt-get update && \
       imagemagick imagemagick-doc \
       libgdal-dev libproj-dev gdal-bin \
       dstat \
+	  r-cran-rjava \
     && \
     rm -rf /var/lib/apt/lists/*
 
