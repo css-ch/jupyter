@@ -1,5 +1,6 @@
 FROM jupyter/all-spark-notebook:d990a62010ae
 USER root
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       vim \
@@ -12,7 +13,7 @@ RUN apt-get update && \
       libgdal-dev libproj-dev gdal-bin \
       dstat \
 	  r-cran-rjava \
-	  tesseract-ocr \
+	  tesseract-ocr-all \
 	  libtesseract-dev \
     && \
     rm -rf /var/lib/apt/lists/*
