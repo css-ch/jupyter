@@ -1,4 +1,4 @@
-FROM cssinsurance/jupyter-gpu-base@sha256:455d35b005bb4b011b323db5ebf003c11639e75ec69aa9a82e99662b0c88e5ad
+FROM cschranz/gpu-jupyter:v1.4_cuda-11.0_ubuntu-18.04
 
 USER root
 
@@ -8,12 +8,17 @@ RUN apt-get update && \
       ssh-client \
       libaio1 \
       htop \
+      zip \
+      openjdk-11-jdk \
+      imagemagick imagemagick-doc \
+      libgdal-dev libproj-dev gdal-bin \
+      dstat \
+	  r-cran-rjava \
+	  tesseract-ocr-all \
+	  libtesseract-dev \
     && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install jupyterlab-code-formatter==1.3.* autopep8==1.5.* isort==4.3.* nbdime==2.1.* && \
-    jupyter labextension install @ryantam626/jupyterlab_code_formatter@^v1.3.6 --no-build && \
-    jupyter labextension install @jupyterlab/toc@^v3.0.0 --no-build && \
-    jupyter labextension install jupyterlab-python-file@^v0.4.0 --no-build && \
-    jupyter lab build -y && jupyter lab clean -y && \
-    jupyter serverextension enable --py jupyterlab_code_formatter --sys-prefix
+RUN pip install pystan==2.19.1.1 fbprophet pytesseract opencv-contrib-python-headless jupyter-server-proxy==3.0.* \ 
+    jupyter_bokeh==3.0.* jupyterlab-code-formatter==1.4.* autopep8==1.5.* isort==5.7.* nbdime==2.1.* jupyterlab-python-file==0.5.* && \
+    jupyter lab build -y && jupyter lab clean -y
