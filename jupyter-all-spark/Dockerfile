@@ -6,6 +6,7 @@ RUN apt-get update && \
       vim \
       ssh-client \
       libaio1 \
+      libgit2-dev \
       htop \
       zip \
       openjdk-11-jdk \
