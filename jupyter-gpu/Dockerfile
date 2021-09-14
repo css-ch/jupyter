@@ -22,7 +22,7 @@ RUN apt-get update && \
 COPY image_magick_conf/policy.xml /etc/ImageMagick-6/policy.xml
 
 RUN pip install pystan==2.19.1.1 fbprophet pytesseract opencv-contrib-python-headless jupyter-server-proxy==3.0.* \ 
-    jupyter_bokeh==3.0.* jupyterlab-code-formatter==1.4.* autopep8==1.5.* isort==5.7.* nbdime==2.1.* jupyterlab-python-file==0.5.* && \
+    jupyter_bokeh==3.0.* jupyterlab-code-formatter==1.4.* autopep8==1.5.* isort==5.7.* nbdime==3.1.* jupyterlab-python-file==0.5.* && \
     jupyter lab build -y && jupyter lab clean -y
 
 RUN mkdir /root/.ssh && echo -e "IdentityFile /home/jovyan/.ssh/id_rsa\nUserKnownHostsFile /home/jovyan/.ssh/known_hosts" > /root/.ssh/config
