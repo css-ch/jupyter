@@ -1,1 +1,0 @@
-Dockerfile copied from: https://github.com/Marek-CSS/gpu-jupyter/blob/master/.build/
