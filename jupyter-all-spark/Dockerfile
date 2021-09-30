@@ -15,6 +15,7 @@ RUN apt-get update && \
       dstat \
       tesseract-ocr-all \
       libtesseract-dev \
+      g++ \
     && \
     rm -rf /var/lib/apt/lists/*
 
