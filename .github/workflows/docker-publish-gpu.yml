@@ -36,7 +36,7 @@ jobs:
       # https://github.com/docker/login-action
       - name: Log into registry ${{ env.REGISTRY }}
         if: github.event_name != 'pull_request'
-        uses: docker/login-action@7f47463f5646678eb7ccf8f0f2e2d0896916a10a
+        uses: docker/login-action@v1
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
@@ -46,14 +46,14 @@ jobs:
       # https://github.com/docker/metadata-action
       - name: Extract Docker metadata
         id: meta
-        uses: docker/metadata-action@a287d15e54221320e8a1b9d1a4bb26519678d2c3
+        uses: docker/metadata-action@v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image
-        uses: docker/build-push-action@5e11b373bfed0d8024ef33d1586c675819690e95
+        uses: docker/build-push-action@v2
         with:
           context: jupyter-gpu
           push: ${{ github.event_name != 'pull_request' }}
