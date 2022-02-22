@@ -1,4 +1,4 @@
-FROM cschranz/gpu-jupyter:v1.4_cuda-11.0_ubuntu-20.04
+FROM cschranz/gpu-jupyter:v1.4_cuda-11.2_ubuntu-20.04
 
 USER root
 
@@ -21,8 +21,8 @@ RUN apt-get update && \
 
 COPY image_magick_conf/policy.xml /etc/ImageMagick-6/policy.xml
 
-RUN pip install pystan==2.19.1.1 fbprophet pytesseract opencv-contrib-python-headless jupyter-server-proxy==3.0.* \ 
-    jupyter_bokeh==3.0.* jupyterlab-code-formatter==1.4.* autopep8==1.5.* isort==5.7.* nbdime==3.1.* jupyterlab-python-file==0.5.* && \
+RUN pip install pystan==2.19.1.1 fbprophet pytesseract opencv-contrib-python-headless jupyter-server-proxy>=3.2.1 \ 
+    jupyter_bokeh==3.0.* jupyterlab-code-formatter==1.4.* autopep8==1.6.* isort==5.10.* nbdime==3.1.* jupyterlab-python-file==0.5.* && \
     jupyter lab build -y && jupyter lab clean -y
 
 RUN mkdir /root/.ssh && echo -e "IdentityFile /home/jovyan/.ssh/id_rsa\nUserKnownHostsFile /home/jovyan/.ssh/known_hosts" > /root/.ssh/config
