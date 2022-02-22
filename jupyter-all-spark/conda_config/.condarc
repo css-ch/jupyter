@@ -1,0 +1,5 @@
+channel_alias: https://artifactory.css.ch/artifactory/conda-channels/
+default_channels:
+  - https://artifactory.css.ch/artifactory/conda-channels/
+envs_dirs:
+  - /home/jovyan/conda_envs/
