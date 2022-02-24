@@ -18,7 +18,7 @@ RUN apt-get update && \
       libtesseract-dev \
       g++ \
     && \
-    unattended-upgrade
+    unattended-upgrade \
     && \
     rm -rf /var/lib/apt/lists/*
 
