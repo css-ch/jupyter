@@ -18,6 +18,8 @@ RUN apt-get update && \
       libtesseract-dev \
       g++ \
     && \
+    unattended-upgrade
+    && \
     rm -rf /var/lib/apt/lists/*
 
 COPY image_magick_conf/policy.xml /etc/ImageMagick-6/policy.xml
