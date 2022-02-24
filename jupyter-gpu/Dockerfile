@@ -17,6 +17,7 @@ RUN apt-get update && \
       tesseract-ocr-all \
       libtesseract-dev \
       g++ \
+      unattended-upgrades \
     && \
     unattended-upgrade \
     && \
