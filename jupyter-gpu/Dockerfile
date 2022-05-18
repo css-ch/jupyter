@@ -2,8 +2,9 @@ FROM cschranz/gpu-jupyter:v1.4_cuda-11.2_ubuntu-20.04
 
 USER root
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+RUN apt-key adv --fetch-keys https://repo.download.nvidia.com/baseos/GPG-KEY-dgx-debian-prod &&\
+      apt-get update && \
+      apt-get install -y --no-install-recommends \
       vim \
       ssh-client \
       libaio1 \
