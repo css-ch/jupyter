@@ -2,7 +2,7 @@ FROM cschranz/gpu-jupyter:v1.4_cuda-11.2_ubuntu-20.04
 
 USER root
 
-RUN apt-key del 7fa2af80 && \
+RUN apt-key del 7fa2af80 && rm -rf /var/lib/apt/lists/* && \
       apt-key adv --fetch-keys https://repo.download.nvidia.com/baseos/GPG-KEY-dgx-debian-prod && \
       apt-get update && \
       apt-get install -y --no-install-recommends \
