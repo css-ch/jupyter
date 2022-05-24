@@ -15,6 +15,7 @@ RUN apt-get update && \
       dstat \
       tesseract-ocr-all \
       libtesseract-dev \
+      libhunspell-dev \
       g++ \
       unattended-upgrades \
     && \

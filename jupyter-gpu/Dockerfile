@@ -17,6 +17,7 @@ RUN rm /etc/apt/sources.list.d/cuda.list && rm /etc/apt/sources.list.d/nvidia-ml
       dstat \
       tesseract-ocr-all \
       libtesseract-dev \
+      libhunspell-dev \
       g++ \
       unattended-upgrades \
     && \
