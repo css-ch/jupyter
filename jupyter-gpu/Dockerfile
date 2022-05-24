@@ -2,8 +2,9 @@ FROM cschranz/gpu-jupyter:v1.4_cuda-11.2_ubuntu-20.04
 
 USER root
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+RUN rm /etc/apt/sources.list.d/cuda.list && rm /etc/apt/sources.list.d/nvidia-ml.list && \
+      apt-get update && \
+      apt-get install -y --no-install-recommends \
       vim \
       ssh-client \
       libaio1 \
