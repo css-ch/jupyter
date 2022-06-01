@@ -20,6 +20,7 @@ RUN rm /etc/apt/sources.list.d/cuda.list && rm /etc/apt/sources.list.d/nvidia-ml
       libhunspell-dev \
       g++ \
       swig \
+      xvfb \
       unattended-upgrades \
     && \
     unattended-upgrade \
