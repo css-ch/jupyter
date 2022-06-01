@@ -19,6 +19,7 @@ RUN apt-get update && \
       g++ \
       unattended-upgrades \
       swig \
+      xvfb \
     && \
     unattended-upgrade \
     && \
