@@ -19,6 +19,7 @@ RUN rm /etc/apt/sources.list.d/cuda.list && rm /etc/apt/sources.list.d/nvidia-ml
       libtesseract-dev \
       libhunspell-dev \
       g++ \
+      swig \
       unattended-upgrades \
     && \
     unattended-upgrade \
