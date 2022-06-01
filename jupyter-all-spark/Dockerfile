@@ -18,6 +18,7 @@ RUN apt-get update && \
       libhunspell-dev \
       g++ \
       unattended-upgrades \
+      swig \
     && \
     unattended-upgrade \
     && \
