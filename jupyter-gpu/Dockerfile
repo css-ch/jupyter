@@ -29,7 +29,7 @@ RUN rm /etc/apt/sources.list.d/cuda.list && rm /etc/apt/sources.list.d/nvidia-ml
 
 COPY image_magick_conf/policy.xml /etc/ImageMagick-6/policy.xml
 
-RUN pip install pystan==2.19.1.1 fbprophet pytesseract opencv-contrib-python-headless jupyter-server-proxy>=3.2.1 \ 
+RUN pip install prophet pytesseract opencv-contrib-python-headless jupyter-server-proxy>=3.2.1 \ 
     jupyter_bokeh==3.0.* jupyterlab-code-formatter==1.4.* autopep8==1.6.* isort==5.10.* nbdime==3.1.* jupyterlab-python-file==0.5.* && \
     jupyter lab build -y && jupyter lab clean -y
 
