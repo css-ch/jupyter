@@ -1,4 +1,4 @@
-FROM jupyter/all-spark-notebook:2022-05-13
+FROM jupyter/all-spark-notebook:2023-04-17
 USER root
 
 RUN apt-get update && \
