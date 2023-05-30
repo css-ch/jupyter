@@ -2,7 +2,7 @@ FROM cschranz/gpu-jupyter:v1.5_cuda-11.6_ubuntu-20.04
 
 USER root
 
-RUN rm /etc/apt/sources.list.d/cuda.list || true && rm /etc/apt/sources.list.d/nvidia-ml.list && || true \
+RUN rm /etc/apt/sources.list.d/cuda.list || true && rm /etc/apt/sources.list.d/nvidia-ml.list || true && \
       apt-get update && \
       apt-get install -y --no-install-recommends \
       vim \
