@@ -2,7 +2,7 @@ FROM cschranz/gpu-jupyter:v1.5_cuda-11.6_ubuntu-20.04
 
 USER root
 
-RUN rm /etc/apt/sources.list.d/cuda.list && rm /etc/apt/sources.list.d/nvidia-ml.list && \
+RUN rm /etc/apt/sources.list.d/cuda.list || true && rm /etc/apt/sources.list.d/nvidia-ml.list || true && \
       apt-get update && \
       apt-get install -y --no-install-recommends \
       vim \
@@ -29,7 +29,6 @@ RUN rm /etc/apt/sources.list.d/cuda.list && rm /etc/apt/sources.list.d/nvidia-ml
 
 COPY image_magick_conf/policy.xml /etc/ImageMagick-6/policy.xml
 
-USER $NB_UID
 RUN pip install pystan==3.6.* prophet pytesseract opencv-contrib-python-headless jupyter-server-proxy>=3.2.1 lux-api \
     jupyter_bokeh==3.0.* jupyterlab-code-formatter==1.6.* autopep8==2.0.* isort==5.12.* nbdime==3.1.* jupyterlab-python-file==0.5.*  lux-widget>=0.1.11 && \
     jupyter lab build -y && jupyter lab clean -y
