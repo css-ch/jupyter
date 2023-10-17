@@ -11,13 +11,13 @@ jobs:
   build-gpu:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Build the jupyter-gpu Docker image
       run: docker build jupyter-gpu/ --file jupyter-gpu/Dockerfile --tag jupyter-gpu:$(date +%s)
       
   build-all-spark:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Build the jupyter-all-spark Docker image
       run: docker build jupyter-all-spark/ --file jupyter-all-spark/Dockerfile --tag jupyter-all-spark:$(date +%s)
