@@ -1,4 +1,4 @@
-FROM jupyter/all-spark-notebook:2024-11-11
+FROM quay.io/repository/jupyter/all-spark-notebook:2024-11-11
 USER root
 
 RUN apt-get update && \
