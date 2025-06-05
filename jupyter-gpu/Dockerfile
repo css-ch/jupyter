@@ -1,4 +1,4 @@
-FROM cschranz/gpu-jupyter:v1.5_cuda-11.6_ubuntu-20.04
+FROM cschranz/gpu-jupyter:v1.9_cuda-12.6_ubuntu-24.04
 
 USER root
 
